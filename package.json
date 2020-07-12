@@ -1,0 +1,7 @@
+{
+  "name": "des-m1",
+  "author": "João Victor Ramires Guimarães Brito",
+  "dependencies": {
+    "jsdom": "^16.3.0"
+  }
+}
