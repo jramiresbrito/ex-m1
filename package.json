@@ -2,6 +2,27 @@
   "name": "des-m1",
   "author": "João Victor Ramires Guimarães Brito",
   "dependencies": {
-    "jsdom": "^16.3.0"
+    "@babel/polyfill": "^7.10.4",
+    "jsdom": "^16.3.0",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.4",
+    "@babel/core": "^7.10.4",
+    "@babel/plugin-transform-arrow-functions": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/register": "^7.10.4",
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.0.5"
+  },
+  "quokka": {
+    "babel": true
+  },
+  "scripts": {
+    "dev": "babel ./src/index.js -o ./lib/bundle.js -w"
   }
 }

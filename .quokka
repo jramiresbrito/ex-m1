@@ -9,5 +9,6 @@
       "runScripts": "dangerously",
       "url": "http://localhost:5500/"
     }
-  }
+  },
+  "delay": 2000
 }
