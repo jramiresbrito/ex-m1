@@ -7,7 +7,7 @@
     "config": {
       "pretendToBeVisual": true,
       "runScripts": "dangerously",
-      "url": "http://localhost:5500/"
+      "url": "http://localhost/"
     }
   },
   "delay": 2000
