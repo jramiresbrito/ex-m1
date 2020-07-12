@@ -40,6 +40,7 @@ const fetchCountries = async () => {
       id: numericCode,
       name: translations.pt,
       population,
+      formattedPopulation: formatNumber(population),
       flag,
     };
   });
@@ -58,7 +59,7 @@ const renderCountryList = () => {
   let countriesHTML = '<div>';
 
   allCountries.forEach((country) => {
-    const { name, flag, id, population } = country;
+    const { name, flag, id, formattedPopulation } = country;
 
     const countryHTML = `
       <div class='country'>
@@ -71,7 +72,7 @@ const renderCountryList = () => {
         <div>
           <ul>
             <li>${name}</li>
-            <li>${population}</li>
+            <li>${formattedPopulation}</li>
           </ul>
         </div>
       </div>
@@ -88,7 +89,7 @@ const renderFavorites = () => {
   let favoritesHTML = '<div>';
 
   favCountries.forEach((country) => {
-    const { name, flag, id, population } = country;
+    const { name, flag, id, formattedPopulation } = country;
 
     const favCountryHTML = `
       <div class='country'>
@@ -101,7 +102,7 @@ const renderFavorites = () => {
         <div>
           <ul>
             <li>${name}</li>
-            <li>${population}</li>
+            <li>${formattedPopulation}</li>
           </ul>
         </div>
       </div>
@@ -120,10 +121,10 @@ const renderSummary = () => {
 
   const totalPop = allCountries.reduce((acc, curr) => acc + curr.population, 0);
 
-  globalPopulation.textContent = totalPop;
+  globalPopulation.textContent = formatNumber(totalPop);
 
   const favPop = favCountries.reduce((acc, curr) => acc + curr.population, 0);
-  favoritesPopulation.textContent = favPop;
+  favoritesPopulation.textContent = formatNumber(favPop);
 };
 
 const renderCountryButtons = () => {
@@ -162,3 +163,5 @@ const removeFromFavorites = (id) => {
 
   render();
 };
+
+const formatNumber = (number) => numberFormat.format(number);
